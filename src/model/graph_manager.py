@@ -2,7 +2,8 @@ import networkx as nx
 import json
 import os
 
-GRAPH_FILE = "model_graph.json"
+# Absoluter Pfad zur JSON-Datei
+GRAPH_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "model_graph.json")
 
 class GraphManager:
     def __init__(self, graph_file=GRAPH_FILE):
@@ -15,7 +16,7 @@ class GraphManager:
             try:
                 with open(self.graph_file, "r") as f:
                     data = json.load(f)
-                    self.graph = nx.node_link_graph(data)
+                    self.graph = nx.node_link_graph(data, edges="links")
                 print(f"Graph loaded from {self.graph_file}.")
             except Exception as e:
                 print(f"Error loading graph from {self.graph_file}: {e}")

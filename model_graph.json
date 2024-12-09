@@ -1,0 +1,14 @@
+{
+    "directed": true,
+    "multigraph": true,
+    "graph": {},
+    "nodes": [
+        {
+            "type": "application",
+            "name": "MyApp",
+            "description": "My First App",
+            "id": "application:MyApp"
+        }
+    ],
+    "links": []
+}

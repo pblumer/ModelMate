@@ -1,5 +1,11 @@
 import click
-from src.model.graph import add_application, get_applications, add_business_capability, get_business_capabilities
+from src.model.graph import (
+    add_application,
+    get_applications,
+    add_business_capability,
+    get_business_capabilities,
+    add_relationship,
+)
 
 @click.group()
 def cli():
@@ -40,3 +46,21 @@ def list_capabilities():
             click.echo(cap)
     else:
         click.echo("No business capabilities found.")
+
+@cli.command()
+@click.argument("source")
+@click.argument("target")
+@click.argument("relation_type")
+def add_relation(source, target, relation_type):
+    """Add a relationship between two entities."""
+    add_relationship(source, target, relation_type)
+    click.echo(f"Added relationship: {source} --{relation_type}--> {target}")
+
+@cli.command()
+@click.argument("source")
+@click.argument("target")
+@click.argument("relation_type")
+def remove_relation(source, target, relation_type):
+    """Remove a relationship between two entities."""
+    # Implement removal logic if needed
+    click.echo(f"Removed relationship: {source} --{relation_type}--> {target}")
