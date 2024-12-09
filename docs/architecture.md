@@ -18,9 +18,8 @@ This document provides a first conceptual view of the ModelMates architecture. I
 
 ## High-Level Components
 
-Architecture Sketch (Text-Based):
-
-  AI Layer (Natural Language)
+```text
+ AI Layer (Natural Language)
         |
         v
   +-----+-----+              +-----------------+
@@ -39,8 +38,9 @@ Architecture Sketch (Text-Based):
           v
       Visualizer
        (ArchiMate, UML, BPMN, ERD)
-       
+
    (Optional future: Logs, Auditing, Versioning)
+```
 
 ## Technology Considerations
 
